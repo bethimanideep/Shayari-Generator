@@ -11,7 +11,9 @@ const configuration = new Configuration({
   apiKey: process.env.OPENAI_API_KEY,
 });
 const openai = new OpenAIApi(configuration);
-
+app.get('/',(req,res)=>{
+  res.json("welcome")
+})
 app.post("/getShayari/:id", async (req, res) => {
   const input = req.params.id
   console.log(input);
